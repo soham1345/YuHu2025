@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>For Aayushi 💖 | Our 2025 in Photos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg1: #fda4af;
+			--bg2: #fecdd3;
+			--bg3: #fbcfe8;
+			--card-bg: rgba(17, 24, 39, 0.9);
+			--card-border: rgba(248, 250, 252, 0.18);
+			--accent: #fb7185;
+			--accent-soft: rgba(251, 113, 133, 0.15);
+			--text-soft: #e5e7eb;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			font-family: "Poppins", sans-serif;
+			background: radial-gradient(circle at top, var(--bg1), var(--bg2), var(--bg3));
+			color: #fff;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 2.5rem 1rem;
+			overflow-x: hidden;
+			position: relative;
+			cursor: url('cursor.png'), auto;
+		}
+
+		/* Floating hearts on background */
+		.heart {
+			position: fixed;
+			width: 18px;
+			height: 18px;
+			background: radial-gradient(circle at 30% 30%, #fff, #fb7185);
+			transform: rotate(-45deg);
+			opacity: 0.32;
+			animation: floatUp 14s linear infinite;
+			z-index: -1;
+		}
+
+		.heart::before,
+		.heart::after {
+			content: "";
+			position: absolute;
+			width: 18px;
+			height: 18px;
+			background: inherit;
+			border-radius: 50%;
+		}
+
+		.heart::before {
+			top: -9px;
+			left: 0;
+		}
+
+		.heart::after {
+			left: 9px;
+			top: 0;
+		}
+
+		.heart.h1 {
+			left: 8%;
+			animation-duration: 17s;
+			animation-delay: 0s;
+		}
+
+		.heart.h2 {
+			left: 25%;
+			animation-duration: 13s;
+			animation-delay: 2s;
+		}
+
+		.heart.h3 {
+			left: 50%;
+			animation-duration: 18s;
+			animation-delay: 1s;
+		}
+
+		.heart.h4 {
+			left: 72%;
+			animation-duration: 15s;
+			animation-delay: 3s;
+		}
+
+		.heart.h5 {
+			left: 90%;
+			animation-duration: 20s;
+			animation-delay: 1.5s;
+		}
+
+		@keyframes floatUp {
+			0% {
+				transform: translateY(0) rotate(-45deg);
+				opacity: 0;
+			}
+
+			10% {
+				opacity: 0.45;
+			}
+
+			70% {
+				opacity: 0.32;
+			}
+
+			100% {
+				transform: translateY(-120vh) rotate(-45deg);
+				opacity: 0;
+			}
+		}
+
+		.card {
+			position: relative;
+			background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent), var(--card-bg);
+			padding: 2.2rem;
+			border-radius: 1.8rem;
+			max-width: 900px;
+			width: 100%;
+			border: 1px solid var(--card-border);
+			box-shadow: 0 24px 70px rgba(15, 23, 42, 0.8);
+			overflow: hidden;
+			backdrop-filter: blur(14px);
+			animation: cardIn 0.6s ease-out both;
+		}
+
+		@media (min-width: 768px) {
+			.card {
+				padding: 2.6rem 2.8rem;
+			}
+		}
+
+		.card::before {
+			content: "";
+			position: absolute;
+			inset: -40%;
+			background: radial-gradient(circle at 0% 0%, rgba(248, 113, 113, 0.22), transparent), radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.18), transparent), radial-gradient(circle at 0% 100%, rgba(129, 140, 248, 0.2), transparent);
+			opacity: 0.7;
+			z-index: -1;
+		}
+
+		@keyframes cardIn {
+			from {
+				opacity: 0;
+				transform: translateY(16px) scale(0.98);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+		}
+
+		h1 {
+			font-size: 2.2rem;
+			margin-bottom: 0.4rem;
+			letter-spacing: 0.03em;
+		}
+
+		@media (min-width: 640px) {
+			h1 {
+				font-size: 2.5rem;
+			}
+		}
+
+		h1::after {
+			content: " ✨";
+			font-size: 1.3rem;
+		}
+
+		.subtitle {
+			color: var(--text-soft);
+			font-size: 0.98rem;
+			margin-bottom: 2rem;
+			max-width: 640px;
+			line-height: 1.7;
+		}
+
+		.gallery-title {
+			text-transform: uppercase;
+			font-size: 0.9rem;
+			letter-spacing: 0.18em;
+			margin-bottom: 0.8rem;
+			color: #cbd5e1;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.gallery-title::before {
+			content: "";
+			width: 40px;
+			height: 1px;
+			background: linear-gradient(to right, rgba(248, 250, 252, 0.4), transparent);
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+			gap: 1rem;
+			margin-top: 0.5rem;
+		}
+
+		.photo {
+			background: rgba(15, 23, 42, 0.9);
+			border-radius: 1rem;
+			overflow: hidden;
+			position: relative;
+			border: 1px solid rgba(148, 163, 184, 0.6);
+			transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+			animation: fadeUp 0.6s ease-out both;
+		}
+
+		.photo:nth-child(2) {
+			animation-delay: 0.05s;
+		}
+
+		.photo:nth-child(3) {
+			animation-delay: 0.1s;
+		}
+
+		.photo:nth-child(4) {
+			animation-delay: 0.15s;
+		}
+
+		.photo:nth-child(5) {
+			animation-delay: 0.2s;
+		}
+
+		.photo:nth-child(6) {
+			animation-delay: 0.25s;
+		}
+
+		.photo:nth-child(7) {
+			animation-delay: 0.3s;
+		}
+
+		.photo:nth-child(8) {
+			animation-delay: 0.35s;
+		}
+
+		.photo:nth-child(9) {
+			animation-delay: 0.4s;
+		}
+
+		.photo:nth-child(10) {
+			animation-delay: 0.45s;
+		}
+
+		.photo:nth-child(11) {
+			animation-delay: 0.5s;
+		}
+
+		.photo:nth-child(12) {
+			animation-delay: 0.55s;
+		}
+
+		@keyframes fadeUp {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.photo:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 18px 35px rgba(15, 23, 42, 0.9);
+			border-color: rgba(251, 113, 133, 0.9);
+			background: radial-gradient(circle at top, var(--accent-soft), rgba(15, 23, 42, 0.98));
+		}
+
+		.photo-inner {
+			position: relative;
+			width: 100%;
+			height: 210px;
+			overflow: hidden;
+		}
+
+		.photo-inner::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(15, 23, 42, 0.35), transparent 40%);
+			opacity: 0.9;
+			mix-blend-mode: soft-light;
+			pointer-events: none;
+		}
+
+		.photo-inner img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			transition: opacity 0.35s ease;
+		}
+
+		.photo-img-main {
+			opacity: 1;
+		}
+
+		.photo-img-alt {
+			opacity: 0;
+		}
+
+		.photo:hover .photo-img-main {
+			opacity: 0;
+		}
+
+		.photo:hover .photo-img-alt {
+			opacity: 1;
+		}
+
+		.caption {
+			font-size: 0.85rem;
+			padding: 0.55rem 0.7rem 0.7rem;
+			color: #e5e7eb;
+			text-align: center;
+			background: rgba(15, 23, 42, 0.98);
+			border-top: 1px solid rgba(148, 163, 184, 0.6);
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+
+		.closing {
+			margin-top: 2.2rem;
+			font-size: 0.96rem;
+			line-height: 1.7;
+			color: #e2e8f0;
+			text-align: center;
+			padding: 1.1rem 0.6rem 0.4rem;
+			border-top: 1px dashed rgba(148, 163, 184, 0.6);
+			margin-inline: 0.3rem;
+		}
+
+		.closing span {
+			color: var(--accent);
+			font-weight: 500;
+		}
+	</style>
+</head>
+
+<body> <!-- floating hearts on pink background -->
+	<div class="heart h1"></div>
+	<div class="heart h2"></div>
+	<div class="heart h3"></div>
+	<div class="heart h4"></div>
+	<div class="heart h5"></div>
+	<div class="card">
+		<h1>Happy 2026, Aayushi 💗</h1>
+		<p class="subtitle"> This year wasn’t perfect, but it was ours — and that alone makes it something I’ll always
+			be grateful for. So here’s a small way of saving our 2025 forever. </p>
+		<div class="gallery-title">our 2025 in photos</div>
+		<div class="gallery"> <!-- JANUARY -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="jan.jpg" alt="January memory" /> <img
+						class="photo-img-alt" src="feb.jpg" alt="January memory (hover)" /> </div>
+				<div class="caption">January</div>
+			</div> <!-- FEBRUARY -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="feb-main.jpg" alt="February memory" /> <img
+						class="photo-img-alt" src="feb-alt.jpg" alt="February memory (hover)" /> </div>
+				<div class="caption">February</div>
+			</div> <!-- MARCH -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="mar-main.jpg" alt="March memory" /> <img
+						class="photo-img-alt" src="mar-alt.jpg" alt="March memory (hover)" /> </div>
+				<div class="caption">March</div>
+			</div> <!-- APRIL -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="apr-main.jpg" alt="April memory" /> <img
+						class="photo-img-alt" src="apr-alt.jpg" alt="April memory (hover)" /> </div>
+				<div class="caption">April</div>
+			</div> <!-- MAY -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="may-main.jpg" alt="May memory" /> <img
+						class="photo-img-alt" src="may-alt.jpg" alt="May memory (hover)" /> </div>
+				<div class="caption">May</div>
+			</div> <!-- JUNE -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="jun-main.jpg" alt="June memory" /> <img
+						class="photo-img-alt" src="jun-alt.jpg" alt="June memory (hover)" /> </div>
+				<div class="caption">June</div>
+			</div> <!-- JULY -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="jul-main.jpg" alt="July memory" /> <img
+						class="photo-img-alt" src="jul-alt.jpg" alt="July memory (hover)" /> </div>
+				<div class="caption">July</div>
+			</div> <!-- AUGUST -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="aug-main.jpg" alt="August memory" /> <img
+						class="photo-img-alt" src="aug-alt.jpg" alt="August memory (hover)" /> </div>
+				<div class="caption">August</div>
+			</div> <!-- SEPTEMBER -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="sep-main.jpg" alt="September memory" /> <img
+						class="photo-img-alt" src="sep-alt.jpg" alt="September memory (hover)" /> </div>
+				<div class="caption">September</div>
+			</div> <!-- OCTOBER -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="oct-main.jpg" alt="October memory" /> <img
+						class="photo-img-alt" src="oct-alt.jpg" alt="October memory (hover)" /> </div>
+				<div class="caption">October</div>
+			</div> <!-- NOVEMBER -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="nov-main.jpg" alt="November memory" /> <img
+						class="photo-img-alt" src="nov-alt.jpg" alt="November memory (hover)" /> </div>
+				<div class="caption">November</div>
+			</div> <!-- DECEMBER -->
+			<div class="photo">
+				<div class="photo-inner"> <img class="photo-img-main" src="dec-main.jpg" alt="December memory" /> <img
+						class="photo-img-alt" src="dec-alt.jpg" alt="December memory (hover)" /> </div>
+				<div class="caption">December</div>
+			</div>
+		</div>
+		<div class="closing"> Every picture here is a tiny proof that <span>2025 was better because you were in
+				it.</span> And if this is what one year looks like, I honestly can’t wait to see the rest. <br><br> —
+			Soham 💗 </div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>For You 💖 | Our Memory Lane</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+	<!-- GSAP -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+	<style>
+		:root {
+			--pink: #fb7185;
+			--pink-soft: #fecdd3;
+			--glass: rgba(255, 255, 255, 0.12);
+			--border: rgba(255, 255, 255, 0.2);
+			--text: #fff;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: radial-gradient(circle at top, #fda4af, #fbcfe8, #fecdd3);
+			color: var(--text);
+			overflow-x: hidden;
+		}
+
+		/* Floating Hearts */
+		.heart {
+			position: fixed;
+			color: rgba(255, 255, 255, 0.6);
+			animation: float 6s linear infinite;
+			font-size: 18px;
+			pointer-events: none;
+		}
+
+		@keyframes float {
+			0% {
+				transform: translateY(100vh);
+				opacity: 0;
+			}
+
+			20% {
+				opacity: 1;
+			}
+
+			100% {
+				transform: translateY(-20vh);
+				opacity: 0;
+			}
+		}
+
+		header {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 2rem;
+		}
+
+		header h1 {
+			font-family: 'Great Vibes', cursive;
+			font-size: 4rem;
+			margin-bottom: 1rem;
+		}
+
+		header p {
+			font-size: 1.2rem;
+			opacity: 0.9;
+		}
+
+		section {
+			padding: 5rem 8%;
+		}
+
+		.month {
+			margin-bottom: 6rem;
+		}
+
+		.month h2 {
+			font-family: 'Great Vibes', cursive;
+			font-size: 3rem;
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 2rem;
+		}
+
+		.card {
+			background: var(--glass);
+			backdrop-filter: blur(15px);
+			border: 1px solid var(--border);
+			border-radius: 20px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.card img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.6s ease;
+		}
+
+		.card:hover img {
+			transform: scale(1.1);
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 1rem;
+			background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+			opacity: 0;
+			transition: opacity 0.4s ease;
+		}
+
+		.card:hover .caption {
+			opacity: 1;
+		}
+
+		.love-note {
+			max-width: 900px;
+			margin: 6rem auto;
+			padding: 3rem 2rem;
+			text-align: center;
+			background: rgba(255, 255, 255, 0.15);
+			border: 1px solid rgba(255, 255, 255, 0.25);
+			border-radius: 30px;
+			backdrop-filter: blur(18px);
+		}
+
+		.love-note h3 {
+			font-family: 'Great Vibes', cursive;
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		footer {
+			padding: 4rem 2rem;
+			text-align: center;
+			font-family: 'Great Vibes', cursive;
+			font-size: 2rem;
+			opacity: 0.9;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- 🎵 Background Music -->
+	<audio id="bgMusic" muted loop>
+		<source src="all4nothing.mp3" type="audio/mpeg">
+	</audio>
+
+	<!-- Floating Hearts -->
+	<script>
+		for (let i = 0; i < 30; i++) {
+			const heart = document.createElement("div");
+			heart.className = "heart";
+			heart.innerHTML = "❤️";
+			heart.style.left = Math.random() * 100 + "vw";
+			heart.style.animationDuration = 4 + Math.random() * 6 + "s";
+			heart.style.fontSize = 12 + Math.random() * 20 + "px";
+			document.body.appendChild(heart);
+		}
+	</script>
+
+	<header>
+		<h1>Our Memory Lane ❤️</h1>
+		<p>Happy New Year, my love ✨</p>
+		<p>You made my 2025 magical in ways I never imagined.</p>
+	</header>
+
+	<section>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+		<div class="month">
+			<h2>January ❄️</h2>
+			<div class="gallery">
+				<div class="card">
+					<img src="aug.JPG">
+					<div class="caption">Our first smiles of the year ❤️</div>
+				</div>
+				<div class="card">
+					<img src="oct.JPG">
+					<div class="caption">Cold days, warm hearts</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="love-note">
+		<h3>To many more years with you ♾️</h3>
+		<p>Always you. Always us. 💖</p>
+	</div>
+
+	<footer>
+		Always you. Always us. ♾️💖
+	</footer>
+
+	<script>
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.from("header h1", { opacity: 0, y: 50, duration: 1.2 });
+		gsap.from("header p", { opacity: 0, y: 30, duration: 1, stagger: 0.3, delay: 0.5 });
+
+		gsap.utils.toArray(".month, .love-note").forEach(el => {
+			gsap.from(el, {
+				opacity: 0,
+				y: 100,
+				duration: 1.2,
+				scrollTrigger: {
+					trigger: el,
+					start: "top 80%",
+				}
+			});
+		});
+
+		const bgMusic = document.getElementById("bgMusic");
+		bgMusic.volume = 0;
+
+		function startMusic() {
+			bgMusic.muted = false;
+			bgMusic.volume = 0;
+			bgMusic.play().catch(() => { });
+			gsap.to(bgMusic, { volume: 0.4, duration: 2, ease: "power2.out" });
+			document.removeEventListener("click", startMusic);
+		}
+
+		document.addEventListener("click", startMusic);
+	</script>
+
+</body>
+
+</html>
